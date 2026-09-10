@@ -3,14 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adivina el número</title>
+  <title>Adivina el Número con Vite</title>
 </head>
 <body>
-  <h1>Adivina el número</h1>
-  <p>La computadora ha generado un número entre 1 y 100. ¡Adivínalo!</p>
-  <input type="number" id="numero">
-  <button id="adivinar">Adivinar</button>
-  <p id="mensaje"></p>
+  <div class="game-card">
+    <header class="game-header">
+      <span class="game-icon">🎯</span>
+      <h1>Adivina el Número</h1>
+      <p class="game-desc">
+        La computadora ha generado un número secreto entre <strong>1 y 100</strong>.<br>
+        ¿Podrás descubrirlo en la menor cantidad de intentos?
+      </p>
+    </header>
+
+    <div class="input-section">
+      <div class="input-group">
+        <input 
+          type="number" 
+          id="numero" 
+          placeholder="Ej: 42" 
+          min="1" 
+          max="100" 
+          autocomplete="off"
+        >
+        <button id="adivinar" class="btn btn-primary">Adivinar</button>
+      </div>
+      <p id="mensaje" class="feedback-msg"></p>
+    </div>
+
+    <div class="stats-panel">
+      <div class="stat-box">
+        <span class="stat-label">Intentos:</span>
+        <span id="intentosCount" class="stat-value">0</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-label">Último número:</span>
+        <span id="ultimoIntento" class="stat-value">-</span>
+      </div>
+    </div>
+
+    <div class="history-section">
+      <h3>Historial de intentos:</h3>
+      <div id="historialLista" class="history-tags">
+        <span class="empty-history">Aún no hay intentos registrados</span>
+      </div>
+    </div>
+
+    <button id="reiniciar" class="btn btn-secondary hidden">🔄 Jugar de nuevo</button>
+  </div>
+
   <script type="module" src="/main.js"></script>
 </body>
 </html>
