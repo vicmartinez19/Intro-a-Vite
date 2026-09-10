@@ -1,4 +1,3 @@
-import './style.css';
 
 // Estado de la aplicación
 let numeroSecreto = generarNumeroAleatorio();
